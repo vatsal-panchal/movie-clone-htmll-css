@@ -13,7 +13,9 @@ html,
 body {
   height: 100%;
   width: 100%;
-  background: linear-gradient(to right, #08081b, #031236);
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: radial-gradient(circle at bottom left, #009688, #00332e, #000000);
+
   color: #fff;
   overflow-x: hidden;
 }
@@ -60,32 +62,46 @@ nav {
 }
 
 .search {
-  padding: 8px 20px;
+  padding: 8px 18px;
   display: flex;
   align-items: center;
-  background: rgb(65, 65, 65);
-  color: white;
   gap: 10px;
-  border-radius: 20px;
+  border-radius: 30px; /* more rounded */
+  background: rgba(255, 255, 255, 0.08); /* glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.2);
   margin-right: 10px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: all 0.3s ease;
 }
 
-input {
+.search:hover {
+  background: rgba(255, 255, 255, 0.15); /* lighter on hover */
+  transform: scale(1.02);
+}
+
+.search input {
   border: none;
   background: transparent;
   outline: none;
-  color: white;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
 }
-input::placeholder {
-  color: rgb(128, 123, 123);
-  font-weight: 500;
+
+.search input::placeholder {
+  color: #aaa;
+  font-weight: 400;
 }
 
 .search i {
-  font-size: 21px;
-  color: rgb(190, 187, 187);
+  font-size: 18px;
+  color: #bbb;
+  transition: color 0.3s ease;
 }
+
+.search:hover i {
+  color: #00c6ff; /* icon highlight on hover */
+}
+
 
 .nav-icons {
   display: flex;
@@ -94,10 +110,25 @@ input::placeholder {
 .bell-icons {
   height: 35px;
   width: 35px;
-  padding: 6px 8px;
-  border-radius: 50px;
-  background: rgb(65, 65, 65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08); /* glassy look */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #bbb;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+
+.bell-icons:hover {
+  background: linear-gradient(135deg, #00c6ff, #0072ff); /* gradient hover */
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
 
 /* movie hero section */
 
@@ -113,6 +144,7 @@ input::placeholder {
   font-weight: 700;
   margin-top: 70px;
   margin-left: 30px;
+  margin-right: 25px;
 }
 .movies-text a {
   list-style: none;
@@ -131,14 +163,23 @@ input::placeholder {
 }
 
 .names {
-  padding: 8px 21px;
-  border-radius: 20px;
-  background-color: rgb(101, 101, 101);
+  padding: 8px 20px;
+  border-radius: 30px; /* thoda aur rounded */
+  background: rgba(255, 255, 255, 0.08); /* glass look */
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
   font-weight: 500;
   text-transform: capitalize;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 .names:hover {
-  background-color: rgb(33, 33, 221);
+  background: linear-gradient(135deg, #00c6ff, #0072ff); /* gradient hover */
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .movies-text {
@@ -148,13 +189,6 @@ input::placeholder {
   margin: 5vh 5vw;
   text-transform: capitalize;
 }
-
-/* .movies-card{
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  padding: 20px;
-} */
 
 .all-movies {
   display: flex;
@@ -178,7 +212,8 @@ input::placeholder {
   width: 260px;
   border-radius: 7px;
   overflow: hidden;
-  background: #1c1c24;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
   color: white;
   cursor: pointer;
 }
@@ -190,6 +225,7 @@ input::placeholder {
 .card img {
   width: 100%;
   height: 260px;
+
   object-fit: cover;
 }
 
@@ -256,6 +292,4 @@ input::placeholder {
   .card {
     width: 200px;
   }
-
-
 }
