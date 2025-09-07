@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-/* ===== GLOBAL STYLES ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
+  -webkit-tap-highlight-color: transparent; /* Mobile Safari/Chrome */
 }
 
 html,
@@ -19,7 +19,6 @@ body {
   background-image: linear-gradient(to right, #000000, #141e30);
 }
 
-/* ===== NAVIGATION SECTION ===== */
 nav {
   padding: 3vh 1vw;
   display: flex;
@@ -147,14 +146,19 @@ input::placeholder {
   flex-wrap: wrap;
 }
 
-/* ===== MOVIE CATEGORIES ===== */
+
 .movie-cat {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2vw;
   margin: 50px 30px;
-  flex-wrap: wrap;
+  overflow-x: auto;
+  padding-top: 5px;
+}
+
+.movie-cat::-webkit-scrollbar {
+  display: none;
 }
 
 .names {
@@ -172,13 +176,14 @@ input::placeholder {
 }
 
 .names:hover {
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  /* background: linear-gradient(135deg, #00c6ff, #0072ff); */
+  background-color: red;
   color: #fff;
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* ===== MOVIES SECTION ===== */
+
 .movies-text {
   display: flex;
   align-items: center;
